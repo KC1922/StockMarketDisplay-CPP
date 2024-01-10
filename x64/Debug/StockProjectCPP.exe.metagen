@@ -1,0 +1,226 @@
+  StockProjectCPP.Form_CandlestickChart.resources - Embedded, ContainedInManifestFile, 
+  StockProjectCPP.Form_Entry.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly StockProjectCPP, Version=1.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class aCandlestick: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(aCandlestick): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.DateTime, Double, Double, Double, Double, UInt64): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    UInt32 volume 'get set' IsLong : 
+    Double low 'get set' : 
+    Double high 'get set' : 
+    Double close 'get set' : 
+    Double open 'get set' : 
+    System.DateTime date 'get set' : 
+  Methods:
+    get_date(): PrivateScope, Public, HideBySig, SpecialName
+    set_date(DateTime): PrivateScope, Public, HideBySig, SpecialName
+    get_open(): PrivateScope, Public, HideBySig, SpecialName
+    set_open(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_close(): PrivateScope, Public, HideBySig, SpecialName
+    set_close(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_high(): PrivateScope, Public, HideBySig, SpecialName
+    set_high(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_low(): PrivateScope, Public, HideBySig, SpecialName
+    set_low(Double): PrivateScope, Public, HideBySig, SpecialName
+    get_volume(): PrivateScope, Public, HideBySig, SpecialName
+    set_volume(UInt32 IsLong): PrivateScope, Public, HideBySig, SpecialName
+    createCandlestick(String): PrivateScope, Public, Static, HideBySig
+Class smartCandlestick: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :aCandlestick
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(aCandlestick): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Double leeway : Public, Static
+    Double bullishLeeway : Public, Static
+    Double bearishLeeway : Public, Static
+    Double dojiLeeway : Public, Static
+    Double hammerLeeway : Public, Static
+    Double longLegLeeway : Public, Static
+  Properties:
+    Double bottomPrice 'get ' : 
+    Double topPrice 'get ' : 
+    Double lowerShadowSize 'get ' : 
+    Double upperShadowSize 'get ' : 
+    Double bodySize 'get ' : 
+    Double range 'get ' : 
+  Methods:
+    get_range(): PrivateScope, Public, HideBySig, SpecialName
+    get_bodySize(): PrivateScope, Public, HideBySig, SpecialName
+    get_upperShadowSize(): PrivateScope, Public, HideBySig, SpecialName
+    get_lowerShadowSize(): PrivateScope, Public, HideBySig, SpecialName
+    get_topPrice(): PrivateScope, Public, HideBySig, SpecialName
+    get_bottomPrice(): PrivateScope, Public, HideBySig, SpecialName
+    isBullish(): PrivateScope, Public, HideBySig
+    isBearish(): PrivateScope, Public, HideBySig
+    isNeutral(): PrivateScope, Public, HideBySig
+    isMarubozu(): PrivateScope, Public, HideBySig
+    isDoji(): PrivateScope, Public, HideBySig
+    isLongLeggedDoji(): PrivateScope, Public, HideBySig
+    isDragonflyDoji(): PrivateScope, Public, HideBySig
+    isGravestoneDoji(): PrivateScope, Public, HideBySig
+    isFourPriceDoji(): PrivateScope, Public, HideBySig
+    isHammer(): PrivateScope, Public, HideBySig
+    isInvertedHammer(): PrivateScope, Public, HideBySig
+    calculateProperties(): PrivateScope, Public, HideBySig
+    calculatePatterns(): PrivateScope, Public, HideBySig
+Class StockProjectCPP.patternRecognizer: AutoLayout, AnsiClass, Class, Public, Abstract, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.Drawing.Color): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 patternSize : Public
+    System.String patternName : Public
+    System.Drawing.Color patternColor : Public
+  Methods:
+    recognizePatterns(List`1): PrivateScope, Public, HideBySig
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class StockProjectCPP.BullishRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.BearishRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.NeutralRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.MarubozuRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.DojiRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.LongLeggedDojiRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.DragonflyDojiRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.GravestoneDojiRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.FourPriceDojiRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.HammerRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.InvertedHammerRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.MorningStarRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.EveningStarRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.EngulfingRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.BullishEngulfingRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.BearishEngulfingRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.HarmaniRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.BullishHarmaniRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.BearishHarmaniRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.PeakRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.ValleyRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.ThreeSolidersRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.ThreeCrowsRecognizer: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :StockProjectCPP.patternRecognizer
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    recognizePattern(List`1): PrivateScope, Public, Virtual, HideBySig
+Class StockProjectCPP.createListOfRecognizers: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    CreateRecognizers(): PrivateScope, Public, Static, HideBySig
+Class StockProjectCPP.Form_CandlestickChart: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(System.Collections.Generic.List`1[smartCandlestick], System.String, System.DateTime, System.DateTime): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    updateChartDisplay(): PrivateScope, Public, HideBySig
+    getMinLow(List`1): PrivateScope, Public, HideBySig
+    getMaxHigh(List`1): PrivateScope, Public, HideBySig
+Class StockProjectCPP.Form_Entry: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    determineDateRange(DateTime&, DateTime&): PrivateScope, Public, HideBySig
+    readCSV(String, List`1&): PrivateScope, Public, HideBySig
