@@ -16,9 +16,10 @@ This stock market program is designed to provide a comprehensive and interactive
    ```bash
    git clone https://github.com/KC1922/StockMarketDisplay-CPP.git```
 2. **Select and Open project solution folder in Visual Studio**
-   ```StockProjectCS```
+   ```StockProjectCPP.sln```
 3. **Restore required NuGet packages necessary for project**
 4. **Clean solution, Build and Run**
+5. Ensure folder with properly formatted data in included outside the project directory. The files used for testing the project can be found here: https://github.com/KC1922/StockMarketDisplay/tree/main/Stock%20Data
 
 ## Documentation
 Navigate through the Microsoft .NET documentation for resources and guidance on Microsoft Visual Studio.
@@ -39,5 +40,5 @@ Navigate through the Microsoft .NET documentation for resources and guidance on 
    - A ComboBox allows the user to select different types of candlestick patterns (i.e. bullish, doji, hammer, e.t.c), including multi-stick patterns (i.e. valley, peak, engulfing, e.t.c).
    - A RichTextBox gives more information on what patterns are being annotated and where they are located.
 5. **Modular Pattern Recognizer**
-   - The structure that identifies patterns, ```patternRecognizer.cs```, uses class inheritence and polymorphism to allow the easy creation of new pattern finders.
+   - The structure that identifies patterns, ```patternRecognizer.cpp```, uses class inheritence and polymorphism to allow the easy creation of new pattern finders.
    - ComboBox on chart form is dynamically populated with pattern names and options based on the patterns that exist in the recognizer.
