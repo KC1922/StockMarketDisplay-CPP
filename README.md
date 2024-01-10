@@ -14,7 +14,7 @@ This stock market program is designed to provide a comprehensive and interactive
 ## Installation
 1. **Clone repository to desired directory**
    ```bash
-   git clone https://github.com/dskroskznik/Stock-Market-Chart-Program.githttps://github.com/dskroskznik/Stock-Market-Chart-Program.git](https://github.com/KC1922/StockMarketDisplay.git```
+   git clone https://github.com/KC1922/StockMarketDisplay-CPP-.git```
 2. **Select and Open project solution folder in Visual Studio**
    ```StockProjectCS```
 3. **Restore required NuGet packages necessary for project**
